@@ -1,12 +1,15 @@
 package com.blibli.springboot.future.service;
 
 import com.blibli.springboot.future.controller.model.request.CreateOrderRequest;
-import com.blibli.springboot.future.controller.model.response.OrderResponse;
 import com.blibli.springboot.future.entity.Order;
+
+import java.util.List;
 
 public interface CashierService {
 
-  OrderResponse getOrder();
+  List<Order> getAllOrder(boolean orderByCustomer, boolean orderByPrice);
 
-  Order createOrder(CreateOrderRequest createOrderRequest);
+  Order getOrderById(int id);
+
+  void createOrder(CreateOrderRequest createOrderRequest);
 }

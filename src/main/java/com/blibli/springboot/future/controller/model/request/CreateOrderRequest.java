@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateOrderRequest {
-    private List<Item> orderItems = new ArrayList<>();
-    private int totalPrice;
-    private Customer customer;
+  private List<Item> orderItems = new ArrayList<>();
+  private int totalPrice;
+  private Customer customer;
 }
