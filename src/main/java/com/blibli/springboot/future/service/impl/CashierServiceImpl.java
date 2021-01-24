@@ -1,6 +1,7 @@
 package com.blibli.springboot.future.service.impl;
 
 import com.blibli.springboot.future.controller.model.request.CreateOrderRequest;
+import com.blibli.springboot.future.controller.model.response.OrderResponse;
 import com.blibli.springboot.future.entity.Order;
 import com.blibli.springboot.future.service.CashierService;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,12 @@ public class CashierServiceImpl implements CashierService {
     private int orderId = 0;
 
   @Override
-  public List<Order> getOrder() {
-    return orders;
+  public OrderResponse getOrder() {
+    return OrderResponse
+            .builder()
+            .totalOrders(orders.size())
+            .orders(orders)
+            .build();
   }
 
   @Override

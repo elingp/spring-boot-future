@@ -1,6 +1,7 @@
 package com.blibli.springboot.future.controller;
 
 import com.blibli.springboot.future.controller.model.request.CreateOrderRequest;
+import com.blibli.springboot.future.controller.model.response.OrderResponse;
 import com.blibli.springboot.future.entity.Order;
 import com.blibli.springboot.future.service.impl.CashierServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class CashierController {
 
 
     @GetMapping(value = "/orders", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Order> getOrder() {
+    public OrderResponse getOrder() {
         return cashierService.getOrder();
     }
 
